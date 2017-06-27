@@ -19,7 +19,7 @@ class BeerMe::CLI
 	def menu
 		input = nil
 		while input != 'exit'
-			puts "Enter beer number to display Beer Info or type 'exit':"
+			puts "Enter beer number to display Beer Info or type 'list' to see the list again or type 'exit':"
 			input = gets.strip.downcase
 		
 			case input
