@@ -31,6 +31,8 @@ class BeerMe::CLI
 				puts "Beer Style: Style"
 				puts "Beer Score: Score"
 				puts "Beer Reviews: Reviews"
+			when "list"
+				list_beers
 			end
 		end
 	end
