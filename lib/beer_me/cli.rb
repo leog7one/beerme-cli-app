@@ -6,6 +6,7 @@ class BeerMe::CLI
 		puts "Top Beers of the Month"
 		list_beers
 		menu
+		goodbye
 	end
 
 	def list_beers
@@ -16,7 +17,26 @@ class BeerMe::CLI
 	end
 
 	def menu
-		puts "Enter beer number to display Beer Info or type 'list' to see the beers again or type 'exit':"
+		input = nil
+		while input != 'exit'
+			puts "Enter beer number to display Beer Info or type 'exit':"
+			input = gets.strip.downcase
+		
+			case input
+			when "1"
+				puts "Beer Style: Style"
+				puts "Beer Score: Score"
+				puts "Beer Reviews: Reviews"
+			when "2"
+				puts "Beer Style: Style"
+				puts "Beer Score: Score"
+				puts "Beer Reviews: Reviews"
+			end
+		end
+	end
+
+	def goodbye
+		puts "See you next month for the new best beers!"
 	end
 
 end
