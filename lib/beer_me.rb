@@ -1,5 +1,5 @@
-require "beer_me/version"
+#beer_me.rb will require the files for the program
+#Acts as the environment
 
-module BeerMe
-  # Your code goes here...
-end
+require_relative "beer_me/version"
+require_relative './beer_me/cli'

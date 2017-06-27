@@ -4,4 +4,12 @@
 #when first creating the file, we need to give it permission to be executed.
 #if we tried running ./bin/beer-me we will get an 'permission denied' error in terminal
 #To give permission we need to change them using 'chmod +x beer-me' in bin/
-puts "Hello World!"
+#puts "Hello World!"
+
+
+require "bundler/setup"
+require "beer_me"
+
+# We do not want the actual CLI in the bin file. 
+# We have a class called CLI that we instaniate and can create a call method that will start the program
+BeerMe::CLI.new.call
