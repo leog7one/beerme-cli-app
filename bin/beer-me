@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+
+#when first creating the file, we need to give it permission to be executed.
+#if we tried running ./bin/beer-me we will get an 'permission denied' error in terminal
+#To give permission we need to change them using chmod +x beer-me in bin/
+puts "Hello World!"
