@@ -10,9 +10,10 @@ class BeerMe::CLI
 		puts "******** " + month_title + "*********"
 		puts "*****************************************"
 		puts ""
-		
+
 		list_beers
 		menu
+		beer_info
 		goodbye
 	end
 
@@ -20,23 +21,32 @@ class BeerMe::CLI
 		@@beers = BeerMe::Beer.scrape_beers_site
 	end
 
+	def beer_info
+		@@info = BeerMe::Beer.scrape_beer_info
+	end
+
 	def menu
 		input = nil
 		while input != 'exit'
+			puts ""
 			puts "Enter beer number to display Beer Info or type 'list' to see the list again or type 'exit':"
 			input = gets.strip.downcase
 		
-			case input
-			when "1"
-				puts "Beer Style: Style"
-				puts "Beer Score: Score"
-				puts "Beer Reviews: Reviews"
-			when "2"
-				puts "Beer Style: Style"
-				puts "Beer Score: Score"
-				puts "Beer Reviews: Reviews"
-			when "list"
+			if input.to_i > 0
+				#grabs the row based on input number and pulls the info for style, score and review number using nokogiri.
+				info = beer_info[input.to_i]
+				beer_style = info.css('td')[4].text
+				beer_score = info.css('td')[2].text
+				beer_reviews = info.css('td')[3].text
+
+				puts "Beer Style: #{beer_style}"
+				puts "Beer Score: #{beer_score}"
+				puts "Beer Reviews: #{beer_reviews}"
+
+			elsif input == "list"
 				list_beers
+			else
+				puts "Not sure what you want? Type 'list' or 'exit'"
 			end
 		end
 	end

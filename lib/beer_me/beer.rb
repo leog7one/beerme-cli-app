@@ -6,6 +6,7 @@ class BeerMe::Beer
 
 	def initailize
 		@@beers << self
+
 	end
 
 	def self.all
@@ -32,5 +33,12 @@ class BeerMe::Beer
 			end
 			puts "#{i}. #{beer.name}"
 		end
+	end
+
+	def self.scrape_beer_info
+		#scrapes the table and only gets the info from the rows
+		doc = Nokogiri::HTML(open("https://www.ratebeer.com/Ratings/TopOfTheMonth.asp"))
+		
+		beer_rows = doc.css("tr")
 	end
 end
