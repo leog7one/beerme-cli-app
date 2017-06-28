@@ -3,7 +3,14 @@
 class BeerMe::CLI
 
 	def call
-		puts "Top Beers of the Month"
+		doc = Nokogiri::HTML(open("https://www.ratebeer.com/Ratings/TopOfTheMonth.asp"))
+		month_title = doc.css("h1").text
+		puts ""
+		puts "*****************************************"
+		puts "******** " + month_title + "*********"
+		puts "*****************************************"
+		puts ""
+		
 		list_beers
 		menu
 		goodbye
