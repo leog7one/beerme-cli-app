@@ -32,7 +32,7 @@ class BeerMe::CLI
 			puts "Enter beer number to display Beer Info or type 'list' to see the list again or type 'exit':"
 			input = gets.strip.downcase
 		
-			if input.to_i > 0
+			if input.to_i > 0 && input.to_i < beer_info.length
 				#grabs the row based on input number and pulls the info for style, score and review number using nokogiri.
 				info = beer_info[input.to_i]
 				beer_style = info.css('td')[4].text
@@ -45,6 +45,9 @@ class BeerMe::CLI
 
 			elsif input == "list"
 				list_beers
+			elsif 
+				puts "Please choose a valid number."
+					
 			else
 				
 			end
