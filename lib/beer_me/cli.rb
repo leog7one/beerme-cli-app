@@ -46,7 +46,7 @@ class BeerMe::CLI
 			elsif input == "list"
 				list_beers
 			else
-				puts "Not sure what you want? Type 'list' or 'exit'"
+				
 			end
 		end
 	end
