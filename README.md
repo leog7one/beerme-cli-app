@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-t the command line you can run 'bin/beer-me'
+In the command line you can run 'bin/beer-me'
 This will generate a list scraped from Ratebeer.com of the top 50 NEW beers of the month.
 Select the number of the beer you would like more info on and the style, score and number of reviews will apeear.
 
