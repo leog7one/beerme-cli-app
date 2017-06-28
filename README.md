@@ -25,6 +25,9 @@ Or install it yourself as:
 In the command line you can run 'bin/beer-me'
 This will generate a list scraped from Ratebeer.com of the top 50 NEW beers of the month.
 Select the number of the beer you would like more info on and the style, score and number of reviews will apeear.
+To bring up the list again type "list"
+If a number is chosen that is not on the list the application will ask you to choose a valid number.
+To exit the app, type "exit"
 
 HAPPY TASTING!
 

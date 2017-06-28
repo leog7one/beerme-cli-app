@@ -31,6 +31,11 @@ How To Build a CLI Gem
  	Beer has score
  	Beer has reviews
 
+ ISSUES:
+
  (ISSUE RESOLVED): As of 6/28/17, have one issue left.
  	- When entering a number not on the list, the error "undefined method `css' for nil:NilClass (NoMethodError)" comes up.
  		Need to find way to make it state : please choose a valid number fir more info.
+
+ (ISSUE RESOLVED): As of 6/28/17, 
+ 	- When exiting it states to choose a valid number before exiting program. Need to take that out as just have it exit.

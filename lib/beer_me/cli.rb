@@ -45,10 +45,12 @@ class BeerMe::CLI
 
 			elsif input == "list"
 				list_beers
+
+			elsif input == "exit"
+
 			elsif 
 				puts "Please choose a valid number."
-					
-			else
+			
 				
 			end
 		end
