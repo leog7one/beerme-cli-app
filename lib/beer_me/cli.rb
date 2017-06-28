@@ -10,10 +10,7 @@ class BeerMe::CLI
 	end
 
 	def list_beers
-		puts <<-DOC.gsub /^\s+/, ""
-		1. Beer Name
-		2. Beer Name 2
-		DOC
+		@@beers = BeerMe::Beer.scrape_beers_site
 	end
 
 	def menu

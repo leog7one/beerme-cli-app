@@ -22,3 +22,11 @@ How To Build a CLI Gem
 
  - user chooses number for info on beer
  - shows beer style, score and number of reviews
+
+
+ what is a beer?
+
+ 	Beer has a name
+ 	Beer has style
+ 	Beer has score
+ 	Beer has reviews
