@@ -1,4 +1,5 @@
 #CLI Controller
+require 'pry'
 
 class BeerMe::CLI
 
@@ -10,20 +11,19 @@ class BeerMe::CLI
 		puts "******** " + month_title + "*********"
 		puts "*****************************************"
 		puts ""
-
+		BeerMe::Beer.scrape_beers_site
+		binding.pry
 		list_beers
 		menu
-		beer_info
 		goodbye
 	end
 
 	def list_beers
-		@@beers = BeerMe::Beer.scrape_beers_site
+		BeerMe::Beer.all.each.with_index(1) do |beer,i|
+			puts "#{i}. #{beer.name}"
+		end
 	end
 
-	def beer_info
-		@@info = BeerMe::Beer.scrape_beer_info
-	end
 
 	def menu
 		input = nil
@@ -32,16 +32,13 @@ class BeerMe::CLI
 			puts "Enter beer number to display Beer Info or type 'list' to see the list again or type 'exit':"
 			input = gets.strip.downcase
 		
-			if input.to_i > 0 && input.to_i < beer_info.length
+			if input.to_i.between?(1, BeerMe::Beer.all.length)
 				#grabs the row based on input number and pulls the info for style, score and review number using nokogiri.
-				info = beer_info[input.to_i]
-				beer_style = info.css('td')[4].text
-				beer_score = info.css('td')[2].text
-				beer_reviews = info.css('td')[3].text
+				beer = BeerMe::Beer.all[input.to_i - 1]
 
-				puts "Beer Style: #{beer_style}"
-				puts "Beer Score: #{beer_score}"
-				puts "Beer Reviews: #{beer_reviews}"
+				puts "Beer Style: #{beer.style}"
+				puts "Beer Score: #{beer.score}"
+				puts "Beer Reviews: #{beer.reviews}"
 
 			elsif input == "list"
 				list_beers
@@ -49,9 +46,7 @@ class BeerMe::CLI
 			elsif input == "exit"
 
 			elsif 
-				puts "Please choose a valid number."
-			
-				
+				puts "Please choose a valid number."		
 			end
 		end
 	end
