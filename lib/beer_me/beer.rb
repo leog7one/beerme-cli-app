@@ -23,21 +23,17 @@ class BeerMe::Beer
 		beer_rows = doc.css('tr')
 		
 		beer_rows.each_with_index do |row, i|
+			#since the iteration will bring back the first row and that row has no info we want to skip the first one
 			if i != 0 
 				beer = BeerMe::Beer.new
 				beer.name = row.css('td')[1].text
 				beer.style = row.css('td')[4].text
 				beer.reviews = row.css('td')[3].text
 				beer.score = row.css('td')[2].text
-				#since the iteration will bring back the first row and that row has no info we want to skip the first one
-				#the index of 0 we will skip it using 'next' and then put the rest as those are the beers.
+				
 			end
 		end
 	end
 
-	def self.reviews_greater_than(num)
-		#this method returns an array of all beer objects with more reviews than the number passed in
-		"hello"
-	end
 
 end

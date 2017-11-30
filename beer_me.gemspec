@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["lguzman@me.com"]
 
   spec.summary       = %q{BeerMe CLI is a gem that gets the Top New Beers of the Month and provides info on the beers}
-  spec.description   = %q{Write a longer description or delete this line.}
+  spec.description   = %q{BeerMe CLI is a gem that gets the Top New Beers of the Month and provides info on the beers}
   spec.homepage      = "http://github.com"
   spec.license       = "MIT"
 

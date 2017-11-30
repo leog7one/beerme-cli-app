@@ -12,7 +12,6 @@ class BeerMe::CLI
 		puts "*****************************************"
 		puts ""
 		BeerMe::Beer.scrape_beers_site
-		binding.pry
 		list_beers
 		menu
 		goodbye
